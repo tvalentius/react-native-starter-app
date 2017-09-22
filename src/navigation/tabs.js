@@ -5,7 +5,7 @@
  * https://github.com/mcnamee/react-native-starter-app
  */
 import React from 'react';
-import { Scene } from 'react-native-router-flux';
+import { Stack, Tabs, Scene } from 'react-native-router-flux';
 
 // Consts and Libs
 import { AppConfig } from '@constants/';
@@ -33,8 +33,8 @@ const navbarPropsTabs = {
 
 /* Routes ==================================================================== */
 const scenes = (
-  <Scene key={'tabBar'} tabs tabBarIconContainerStyle={AppStyles.tabbar} pressOpacity={0.95}>
-    <Scene
+  <Tabs tabBarIconContainerStyle={AppStyles.tabbar} pressOpacity={0.95}>
+    <Stack
       {...navbarPropsTabs}
       key={'recipes'}
       title={'Recipes'}
@@ -54,7 +54,7 @@ const scenes = (
         getTitle={props => ((props.title) ? props.title : 'View Recipe')}
         analyticsDesc={'RecipeView: View Recipe'}
       />
-    </Scene>
+    </Stack>
 
     <Scene
       key={'timeline'}
@@ -82,7 +82,7 @@ const scenes = (
       icon={props => TabIcon({ ...props, icon: 'speaker-notes' })}
       analyticsDesc={'StyleGuide: Style Guide'}
     />
-  </Scene>
+  </Tabs>
 );
 
 export default scenes;

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   backgroundFill: {
     backgroundColor: MENU_BG_COLOR,
     height: AppSizes.screen.height,
-    width: AppSizes.screen.width,
+    width: AppSizes.screen.width * 0.7,
     position: 'absolute',
     top: 0,
     left: 0,

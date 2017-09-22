@@ -5,7 +5,7 @@
  * https://github.com/mcnamee/react-native-starter-app
  */
 import React from 'react';
-import { Scene, ActionConst } from 'react-native-router-flux';
+import { Stack, Scene, ActionConst } from 'react-native-router-flux';
 
 // Consts and Libs
 import { AppConfig } from '@constants/';
@@ -19,7 +19,7 @@ import UpdateProfileForm from '@containers/auth/Forms/UpdateProfileContainer';
 
 /* Routes ==================================================================== */
 const scenes = (
-  <Scene key={'authenticate'}>
+  <Stack key={'authenticate'}>
     <Scene
       hideNavBar
       key={'authLanding'}
@@ -59,7 +59,7 @@ const scenes = (
       component={UpdateProfileForm}
       analyticsDesc={'Update Profile'}
     />
-  </Scene>
+  </Stack>
 );
 
 export default scenes;

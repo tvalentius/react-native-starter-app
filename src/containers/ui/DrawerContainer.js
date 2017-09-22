@@ -50,7 +50,6 @@ class Drawer extends Component {
     sideMenuIsOpen: null,
   }
 
-
   /**
     * Toggle Side Menu
     */
@@ -62,7 +61,7 @@ class Drawer extends Component {
 
   render() {
     const state = this.props.navigationState;
-    const children = state.children;
+    const children = state && state.children ? state.children : null;
 
     return (
       <SideMenu
@@ -78,8 +77,10 @@ class Drawer extends Component {
         onChange={this.onSideMenuChange}
         disableGestures
       >
-        <View style={{ backgroundColor: '#000', flex: 1 }}>
-          <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
+        <View>
+          {children &&
+            <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
+          }
         </View>
       </SideMenu>
     );
